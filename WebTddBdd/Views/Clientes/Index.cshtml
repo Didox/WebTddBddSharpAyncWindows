@@ -1,0 +1,17 @@
+﻿@{
+    var clientes = ((System.Collections.Generic.List<WebTddBdd.Models.Cliente>)ViewData["Clientes"]);
+}
+
+<div class="text-center">
+    <h1 class="display-4">Clientes</h1>
+    <ul>
+        @foreach (var cliente in clientes)
+        {
+            <li>
+                <div>Id: @cliente.Id</div>
+                <div>Nome: @cliente.Nome</div>
+                <div>CPF: @cliente.CPF</div>
+            </li>
+        }
+    </ul>
+</div>

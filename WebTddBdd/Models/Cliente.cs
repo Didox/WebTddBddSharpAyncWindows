@@ -14,6 +14,16 @@ namespace WebTddBdd.Models
         public string Nome { get; set; }
         public string CPF { get; set; }
 
+		public static async Task<List<Cliente>> AllAsync()
+        {
+            await Task.Delay(10000);
+			//var clientes = new List<Cliente>();
+			//clientes.Add(new Cliente(){ Id= 1, Nome = "Danilo"});
+            //return clientes;
+
+			return new DBContextWeb().Clientes.ToList();
+        }
+
         public bool ValidaCpf()
         {
 			string cpf = this.CPF;

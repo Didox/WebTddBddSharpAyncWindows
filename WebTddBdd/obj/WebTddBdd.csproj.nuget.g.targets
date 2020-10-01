@@ -5,5 +5,7 @@
   </PropertyGroup>
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <Import Project="$(NuGetPackageRoot)selenium.webdriver.chromedriver\85.0.4183.8700\build\Selenium.WebDriver.ChromeDriver.targets" Condition="Exists('$(NuGetPackageRoot)selenium.webdriver.chromedriver\85.0.4183.8700\build\Selenium.WebDriver.ChromeDriver.targets')" />
+    <Import Project="$(NuGetPackageRoot)netstandard.library\2.0.1\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('$(NuGetPackageRoot)netstandard.library\2.0.1\build\netstandard2.0\NETStandard.Library.targets')" />
+    <Import Project="$(NuGetPackageRoot)microsoft.visualstudio.web.codegeneration.tools\2.0.4\build\microsoft.visualstudio.web.codegeneration.tools.targets" Condition="Exists('$(NuGetPackageRoot)microsoft.visualstudio.web.codegeneration.tools\2.0.4\build\microsoft.visualstudio.web.codegeneration.tools.targets')" />
   </ImportGroup>
 </Project>
