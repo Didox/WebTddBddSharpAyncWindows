@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using WebTddBdd.Models;
 
@@ -22,6 +23,14 @@ namespace WebTddBdd.Controllers
         public IActionResult Block()
         {
             List<Cliente> clientes = new DBContextWeb().Clientes.ToList();
+            ViewBag.Clientes = clientes;
+            return View("Index");
+        }
+
+        [Route("/dados")]
+        public async Task<IActionResult> Dado()
+        {
+            List<Cliente> clientes = await new DBContextWeb().Clientes.ToListAsync();
             ViewBag.Clientes = clientes;
             return View("Index");
         }
